@@ -1,0 +1,43 @@
+package com.juaracoding.main.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.juaracoding.main.entity.AdminUser;
+import com.juaracoding.main.entity.Laporan;
+import com.juaracoding.main.repository.LaporanRepository;
+
+@Service
+public class ModelLaporan implements ModelLaporangInterface {
+
+	@Autowired
+	LaporanRepository laporanRepo;
+	
+	@Override
+	public List<Laporan> getAllLaporan() {
+		// TODO Auto-generated method stub
+		return (List<Laporan>)this.laporanRepo.findAll();
+	}
+
+	@Override
+	public Laporan addLaporan(Laporan laporan) {
+		// TODO Auto-generated method stub
+		return this.laporanRepo.save(laporan);
+	}
+
+	@Override
+	public void deleteLaporan(String id) {
+		// TODO Auto-generated method stub
+		this.laporanRepo.deleteById(Long.parseLong(id));
+	}
+
+	@Override
+	public Laporan getLaporanById(String id) {
+		// TODO Auto-generated method stub
+		return this.laporanRepo.findById(Long.parseLong(id)).get();
+	}
+
+	
+	}

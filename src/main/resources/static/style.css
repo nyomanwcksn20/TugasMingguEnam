@@ -1,0 +1,10 @@
+.card{
+	padding: 10px;
+	background: #48b54e;
+	margin-left: 1em;
+	margin-right: 1em;
+	height: auto;
+	font-size: 1.5em;
+	line-height: 50px;
+	color: white;
+}
